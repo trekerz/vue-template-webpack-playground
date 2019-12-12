@@ -30,6 +30,7 @@ module.exports = {
         "named": "ignore",
         "asyncArrow": "always"
       }
-    ]
+    ],
+    "comma-dangle": ["error", "ignore"],
   }
 };
