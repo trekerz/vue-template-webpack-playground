@@ -31,6 +31,6 @@ module.exports = {
         "asyncArrow": "always"
       }
     ],
-    "comma-dangle": ["error", "ignore"],
+    "comma-dangle": ["error", "never"],
   }
 };
