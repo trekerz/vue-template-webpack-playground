@@ -1,6 +1,6 @@
 # vue-template-webpack
 
-> A Vue.js project
+> A Vue H5 Template including vue-router、vuex、webpack、es
 
 ## Build Setup
 
