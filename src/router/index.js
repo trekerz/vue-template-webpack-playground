@@ -1,30 +1,22 @@
 import Vue from 'vue'
-import Config from '@/config/config'
 import Router from 'vue-router'
-import Home from '@/views/Home'
+import Config from '@/config/config'
 
 Vue.use(Router)
 
-const router = new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      meta: {
-        title: '首页'
-      },
-      component: Home
-    },
-    {
-      path: '/card',
-      name: 'Card',
-      meta: {
-        title: '卡片页'
-      },
-      component: () => import(/* webpackChunkName: "card" */ '../views/Card')
-    }
-  ]
+let routes = []
+const routeContext = require.context('.', true, /\.js$/)
+
+// 导入各模块
+routeContext.keys().forEach(route => {
+  if (route.startsWith('./index')) {
+    return
+  }
+  const routeModule = routeContext(route)
+  routes = routes.concat(routeModule.default || routeModule)
 })
+
+const router = new Router({ routes })
 
 // 页面标题
 router.beforeEach((to, from, next) => {
