@@ -2,24 +2,29 @@
   <div class="page-wrapper">
     <div class="word">{{ name }}</div>
     <swiper-view :list="cardList" />
-    <Button class="btn-lottery" type="primary" @click="startLottery">立即抽卡</Button>
-    <Popup class="popup-wrapper" v-model="showPopup">
-      <img :src="cardList[0].img || ''" />
-    </Popup>
+    <van-button class="btn-lottery" type="primary" @click="startLottery">立即抽卡</van-button>
+    <card-box :list="[1,2,3]" />
+    <van-popup class="popup-wrapper" v-model="showPopup">
+      <card-lottery v-if="showPopup" />
+    </van-popup>
   </div>
 </template>
 
 <script>
 import 'swiper/dist/css/swiper.css'
-import swiper from '@/components/Swiper'
+import Swiper from '@/components/Swiper'
+import CardBox from '@/components/CardBox'
+import CardLottery from '@/components/CardLottery'
 import { Button, Popup } from 'vant'
 
 export default {
   name: 'Swiper',
   components: {
-    'swiper-view': swiper,
-    Button,
-    Popup
+    'swiper-view': Swiper,
+    'card-box': CardBox,
+    'card-lottery': CardLottery,
+    'van-button': Button,
+    'van-popup': Popup
   },
   data() {
     return {
@@ -66,8 +71,17 @@ export default {
       font-size: ~`unit(48)`;
       background: green;
     }
+    .swiper-container {
+      margin-top: ~`unit(16)`;
+    }
+    .card-box-wrapper {
+      margin-top: ~`unit(48)`;
+    }
     .btn-lottery {
       margin-top: ~`unit(32)`;
+    }
+    .popup-wrapper {
+      background: none;
     }
   }
 </style>
