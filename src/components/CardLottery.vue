@@ -1,8 +1,13 @@
 <template>
   <div class="card-lottery-wrapper">
     <div class="card">
-      <img class="front" :src="imgFront" />
-      <img class="back" :src="imgBack" />
+      <div class="front">
+        <img :src="imgFront" />
+      </div>
+      <div class="back">
+        <!-- <img :src="imgBack" /> -->
+        中奖啦
+      </div>
     </div>
   </div>
 </template>
@@ -30,25 +35,22 @@ export default {
       position: relative;
       width: ~`unit(480)`;
       height: ~`unit(620)`;
-      border-radius: ~`unit(16)`;
-      // animation-name: turnOver;
-      // animation-duration: 1s;
-      // animation-timing-function: ease-in;
-      // transform-style: preserve-3d;
-      // backface-visibility: hidden;
-      // transition: transform 2s;
       transform-style: preserve-3d;
-      animation: turnToBack .8s ease-in;
+      animation: turnBack 1s ease-in .8s forwards;
       .front,
       .back {
         .position(absolute);
-        width: 100%;
-        height: 100%;
+        overflow: hidden;
+        border-radius: ~`unit(16)`;
         backface-visibility: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
       .back {
+        background: #eee;
         transform: rotateY(180deg);
-        animation: turnToFront .8s ease-in;
       }
     }
   }
@@ -56,11 +58,7 @@ export default {
     0% { transform: scale(0.2); }
     100% { transform: scale(1); }
   }
-  @keyframes turnToFront {
-    0% { transform: rotateY(180deg); }
-    100% { transform: rotateY(0); }
-  }
-  @keyframes turnToBack {
+  @keyframes turnBack {
     0% { transform: rotateY(0); }
     100% { transform: rotateY(180deg); }
   }

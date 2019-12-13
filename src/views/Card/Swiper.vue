@@ -82,6 +82,7 @@ export default {
     }
     .popup-wrapper {
       background: none;
+      overflow: visible;
     }
   }
 </style>
