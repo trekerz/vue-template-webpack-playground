@@ -1,0 +1,32 @@
+/**
+ * 工具函数
+ */
+
+// flex布局
+.flex(@fd: row, @jc: flex-start, @ai: stretch) {
+  display: flex;
+  flex-direction: @fd;
+  justify-content: @jc;
+  align-items: @ai;
+}
+
+// 定位
+.position(@position, @top: 0, @bottom: 0, @left: 0, @right: 0) {
+  position: @position;
+  top: @top;
+  bottom: @bottom;
+  left: @left;
+  right: @right;
+}
+
+// 为适配不同库的设计尺寸标准，在此提供方法做统一转换
+.unit() {
+  @functions: ~`(function() {
+    var designWidth = 750
+    var libDesignWidth = 375
+    this.unit = function(from) {
+      return from / (designWidth / libDesignWidth) + 'px'
+    }
+  })()`
+}
+.unit();
