@@ -25,7 +25,7 @@
     var designWidth = 750
     var libDesignWidth = 375
     this.unit = function(from) {
-      return from / (designWidth / libDesignWidth) + 'px'
+      return +from / (designWidth / libDesignWidth) + 'px'
     }
   })()`
 }
