@@ -16,6 +16,7 @@ import Swiper from '@/components/Swiper'
 import CardBox from '@/components/CardBox'
 import CardLottery from '@/components/CardLottery'
 import { Button, Popup } from 'vant'
+const imgExample = require('../../assets/example.jpg')
 
 export default {
   name: 'Swiper',
@@ -33,22 +34,22 @@ export default {
       cardList: [
         {
           id: 1,
-          img: 'http://img5.imgtn.bdimg.com/it/u=3008142408,2229729459&fm=26&gp=0.jpg',
+          img: imgExample,
           text: '爱岗福'
         },
         {
           id: 2,
-          img: 'http://img5.imgtn.bdimg.com/it/u=3008142408,2229729459&fm=26&gp=0.jpg',
+          img: imgExample,
           text: '敬业福'
         },
         {
           id: 3,
-          img: 'http://img5.imgtn.bdimg.com/it/u=3008142408,2229729459&fm=26&gp=0.jpg',
+          img: imgExample,
           text: '诚信福'
         },
         {
           id: 4,
-          img: 'http://img5.imgtn.bdimg.com/it/u=3008142408,2229729459&fm=26&gp=0.jpg',
+          img: imgExample,
           text: '友善福'
         }
       ]

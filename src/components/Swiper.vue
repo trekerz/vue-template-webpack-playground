@@ -63,6 +63,10 @@ export default {
       border-radius: ~`unit(16)`;
       opacity: 1;
       transition: transform .5s;
+      img {
+        width: 100%;
+        height: 100%;
+      }
       &.swiper-slide-active {
         box-shadow: ~`unit(4)` ~`unit(4)` ~`unit(24)` rgba(12, 12, 12, .5);
       }

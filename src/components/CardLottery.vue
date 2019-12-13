@@ -13,12 +13,14 @@
 </template>
 
 <script>
+const imgExample = require('../assets/example.jpg')
+
 export default {
   name: 'CardLottery',
   data() {
     return {
-      imgFront: 'http://img5.imgtn.bdimg.com/it/u=3008142408,2229729459&fm=26&gp=0.jpg',
-      imgBack: 'http://img1.imgtn.bdimg.com/it/u=1806061882,1543357569&fm=26&gp=0.jpg'
+      imgFront: imgExample
+      // imgBack: 'http://img1.imgtn.bdimg.com/it/u=1806061882,1543357569&fm=26&gp=0.jpg'
     }
   },
   methods: {
