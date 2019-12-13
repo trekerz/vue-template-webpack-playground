@@ -59,21 +59,21 @@ export default {
 <style lang="less" scoped>
   @import '../../style/common.less';
   .page-wrapper {
-    width: 375px;
+    width: ~`unit(750)`;
     .word {
       color: white;
-      font-size: 24px;
+      font-size: ~`unit(48)`;
       background: green;
     }
   }
   .swiper-container {
-    margin-top: 12px;
+    margin-top: ~`unit(24)`;
     .swiper-slide {
       // width: 60%;
-      height: 240px;
+      height: ~`unit(480)`;
       background: #eee;
       overflow: hidden;
-      border-radius: 8px;
+      border-radius: ~`unit(16)`;
       opacity: 1;
       transition: transform .5s;
       &:not(.swiper-slide-active) {

@@ -21,10 +21,10 @@ export default {
   @import '../../style/common.less';
   .card-wrapper {
     .flex(column, center);
-    width: 375px;
+    width: ~`unit(750)`;
     .word {
       color: white;
-      font-size: 24px;
+      font-size: ~`unit(48)`;
       background: green;
     }
   }

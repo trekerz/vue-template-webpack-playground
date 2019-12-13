@@ -1,7 +1,7 @@
 <template>
   <div class="page-wrapper">
     <div class="word">{{ name }}</div>
-    <Swipe>
+    <Swipe style="height: 200px">
       <SwipeItem>1</SwipeItem>
       <SwipeItem>2</SwipeItem>
       <SwipeItem>3</SwipeItem>
@@ -53,23 +53,17 @@ export default {
     width: ~`unit(750)`;
     .word {
       color: white;
-      font-size: 24px;
+      font-size: ~`unit(48)`;
       background: green;
     }
   }
   .van-swipe {
-    margin-top: 12px;
-    .swiper-slide {
-      // width: 60%;
-      height: 240px;
+    margin-top: ~`unit(24)`;
+    .van-swipe-item {
       background: #eee;
       overflow: hidden;
-      border-radius: 8px;
+      border-radius: ~`unit(16)`;
       opacity: 1;
-      transition: transform .5s;
-      &:not(.swiper-slide-active) {
-        transform: scale(0.9);
-      }
     }
   }
 </style>
