@@ -18,3 +18,15 @@
   left: @left;
   right: @right;
 }
+
+// 为适配不同库的设计尺寸标准，在此提供方法做统一转换
+.unit() {
+  @functions: ~`(function() {
+    var designWidth = 750
+    var libDesignWidth = 375
+    this.unit = function(from) {
+      return from / (designWidth / libDesignWidth) + 'px'
+    }
+  })()`
+}
+.unit();
