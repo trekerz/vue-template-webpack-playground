@@ -12,7 +12,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'swiper-component',
+  name: 'Swiper',
   components: {
     swiper,
     swiperSlide
@@ -55,15 +55,17 @@ export default {
 <style lang="less" scoped>
   @import '../style/common.less';
   .swiper-container {
-    margin-top: ~`unit(24)`;
+    padding: ~`unit(28)` 0;
     .swiper-slide {
-      // width: 60%;
       height: ~`unit(480)`;
       background: #eee;
       overflow: hidden;
       border-radius: ~`unit(16)`;
       opacity: 1;
       transition: transform .5s;
+      &.swiper-slide-active {
+        box-shadow: ~`unit(4)` ~`unit(4)` ~`unit(24)` rgba(12, 12, 12, .5);
+      }
       &:not(.swiper-slide-active) {
         transform: scale(0.9);
       }

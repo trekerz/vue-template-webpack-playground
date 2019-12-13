@@ -1,14 +1,14 @@
 <template>
   <div class="page-wrapper">
     <div class="word">{{ name }}</div>
-    <Swipe style="height: 200px">
-      <SwipeItem>1</SwipeItem>
-      <SwipeItem>2</SwipeItem>
-      <SwipeItem>3</SwipeItem>
-      <SwipeItem>4</SwipeItem>
-      <SwipeItem>5</SwipeItem>
-      <SwipeItem>6</SwipeItem>
-    </Swipe>
+    <van-swipe style="height: 200px">
+      <van-swipe-item>1</van-swipe-item>
+      <van-swipe-item>2</van-swipe-item>
+      <van-swipe-item>3</van-swipe-item>
+      <van-swipe-item>4</van-swipe-item>
+      <van-swipe-item>5</van-swipe-item>
+      <van-swipe-item>6</van-swipe-item>
+    </van-swipe>
   </div>
 </template>
 
@@ -18,8 +18,8 @@ import { Swipe, SwipeItem } from 'vant'
 export default {
   name: 'VantSwiper',
   components: {
-    Swipe,
-    SwipeItem
+    'van-swipe': Swipe,
+    'van-swipe-item': SwipeItem
   },
   data() {
     return {
