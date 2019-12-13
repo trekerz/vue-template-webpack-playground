@@ -1,6 +1,6 @@
 <template>
   <div class="home-wrapper">
-    <Helloworld />
+    <!-- <Helloworld /> -->
     <router-link to="/card">卡片页 →</router-link>
   </div>
 </template>
