@@ -44,7 +44,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       poll: config.dev.poll,
     },
     // ngrok
-    disableHostCheck: true
+    // disableHostCheck: true
   },
   plugins: [
     new webpack.DefinePlugin({
