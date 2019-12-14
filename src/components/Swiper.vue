@@ -14,7 +14,7 @@ export default {
   name: 'Swiper',
   components: {
     swiper,
-    swiperSlide
+    'swiper-slide': swiperSlide
   },
   props: {
     list: {
