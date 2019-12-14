@@ -32,5 +32,10 @@ module.exports = {
       }
     ],
     "comma-dangle": ["error", "never"],
+    "one-var": ["error", {
+      var: "always",
+      let: "always",
+      const: "never"
+    }]
   }
 };
