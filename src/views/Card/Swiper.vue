@@ -4,8 +4,12 @@
     <swiper-view :list="cardList" />
     <van-button class="btn-lottery" type="primary" @click="startLottery">立即抽卡</van-button>
     <card-box :list="[1,2,3]" />
-    <van-popup class="popup-wrapper" v-model="showPopup">
-      <card-lottery v-if="showPopup" />
+    <van-popup
+      class="popup-wrapper"
+      v-model="showPopup"
+      :close-on-popstate="false"
+      :close-on-click-overlay="false">
+      <card-lottery v-if="showPopup" @getCard="onGetCard" />
     </van-popup>
   </div>
 </template>
@@ -58,6 +62,9 @@ export default {
   methods: {
     startLottery() {
       this.showPopup = true
+    },
+    onGetCard() {
+      this.showPopup = false
     }
   }
 }
