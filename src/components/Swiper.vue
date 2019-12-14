@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
@@ -72,6 +71,11 @@ export default {
       }
       &:not(.swiper-slide-active) {
         transform: scale(0.9);
+      }
+    }
+    .swiper-pagination {
+      /deep/ .swiper-pagination-bullet-active {
+        background: #1baf63;
       }
     }
   }

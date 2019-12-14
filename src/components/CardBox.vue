@@ -45,7 +45,7 @@ export default {
       .van-icon {
         width: 100%;
         height: 100%;
-        background: #eee;
+        background: #e8e8e8;
       }
     }
   }
