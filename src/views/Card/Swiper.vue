@@ -3,13 +3,13 @@
     <div class="word">{{ name }}</div>
     <swiper-view :list="cardList" />
     <van-button class="btn-lottery" type="primary" @click="startLottery">立即抽卡</van-button>
-    <card-box :list="[1,2,3]" />
+    <card-box :list="cardBoxList" />
     <van-popup
       class="popup-wrapper"
       v-model="showPopup"
       :close-on-popstate="false"
       :close-on-click-overlay="false">
-      <card-lottery v-if="showPopup" @getCard="onGetCard" />
+      <card-lottery v-if="showPopup" :nextIndex="nextBoxIndex" @getCard="onGetCard" />
     </van-popup>
   </div>
 </template>
@@ -35,6 +35,8 @@ export default {
     return {
       name: 'Swiper',
       showPopup: false,
+      cardBoxList: [],
+      nextBoxIndex: 0,
       cardList: [
         {
           id: 1,
@@ -59,12 +61,21 @@ export default {
       ]
     }
   },
+  mounted() {
+    this.cardBoxList = new Array(5).fill({})
+  },
   methods: {
     startLottery() {
       this.showPopup = true
+      this.nextBoxIndex = this.cardBoxList.findIndex(card => !card.id)
     },
     onGetCard() {
       this.showPopup = false
+      this.$set(this.cardBoxList, this.nextBoxIndex, {
+        id: +new Date(),
+        img: imgExample,
+        text: '敬业福'
+      })
     }
   }
 }
